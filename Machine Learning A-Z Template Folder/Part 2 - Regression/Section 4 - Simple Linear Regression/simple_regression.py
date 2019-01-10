@@ -5,12 +5,11 @@ import matplotlib.pyplot as plt
 
 
 df = pd.read_csv('Salary_Data.csv')
-"""x = np.array(df['YearsExperience'])
+x = np.array(df['YearsExperience'])
 x = x.reshape(-1,1)
 y = np.array(df['Salary'])
-y = y.reshape(-1,1)"""
-x = df.iloc[:,:-1]
-y = df.iloc[:,1:1]
+y = y.reshape(-1,1)
+
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
 
@@ -43,8 +42,4 @@ plt.plot(x_train, clf.predict(x_train), color = 'blue')
 plt.title('Salary vs Experience (Test set)')
 plt.xlabel('Years of Experience')
 plt.ylabel('Salary')
-plt.show()
-
-plt.scatter(x_test, y_pred, color = 'red')
-plt.scatter(x_test, y_test, color = 'blue')
 plt.show()
